@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        // call, apply and bind tutorials
+        obj1 = {
+            firstname: "Jagadish",
+            lastname: "Ruvva"
+        }
+
+        obj2 = {
+            firstname: "Blessy",
+            lastname: "Ruvva"
+        }
+
+        obj3 = {
+            firstname: "Karunakar",
+            lastname: "Ruvva"
+        }
+
+
+
+        array1 = ["Sanathnagar", "Hyderabad"]
+
+        let function1 = function(area, hometown) {
+            let c = this.firstname + " " + this.lastname + " " + area + " " + ", " + hometown;
+            console.log(c);
+        }
+
+        function1.call(obj2, "Sanathnagar", "Hyderabad"); // it is directly invoke function and 2nd parameter as comma.
+        function1.apply(obj1, array1); // it is directly invoke function and 2nd parameter as array or directly array in 2nd parameter.
+
+        //function1.bind(obj4, "Sanathnagar", "Hyderabad"); not like this way.
+
+        let bindfunction = function1.bind(obj3, "Sanathnagar", "Hyderabad"); // we need create variable and we need call function
+        bindfunction();
+    </script>
+
+</body>
+
+</html>
